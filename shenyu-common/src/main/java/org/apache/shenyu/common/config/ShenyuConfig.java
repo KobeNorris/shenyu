@@ -1119,6 +1119,7 @@ public class ShenyuConfig {
          * @return the value of allowedHeaders
          */
         public String getAllowedHeaders() {
+            LOG.warn("[CTEST][GET-PARAM] getAllowedHeaders" + getStackTrace());
             return allowedHeaders = wrapperHeaders(allowedHeaders);
         }
     
@@ -1128,6 +1129,7 @@ public class ShenyuConfig {
          * @param allowedHeaders allowedHeaders
          */
         public void setAllowedHeaders(final String allowedHeaders) {
+            LOG.warn("[CTEST][SET-PARAM] setAllowedHeaders" + getStackTrace());
             this.allowedHeaders = wrapperHeaders(allowedHeaders);
         }
     
@@ -1137,6 +1139,7 @@ public class ShenyuConfig {
          * @return the value of allowedMethods
          */
         public String getAllowedMethods() {
+            LOG.warn("[CTEST][GET-PARAM] getAllowedMethods" + getStackTrace());
             return allowedMethods;
         }
     
@@ -1146,6 +1149,7 @@ public class ShenyuConfig {
          * @param allowedMethods allowedMethods
          */
         public void setAllowedMethods(final String allowedMethods) {
+            LOG.warn("[CTEST][SET-PARAM] setAllowedMethods" + getStackTrace());
             this.allowedMethods = allowedMethods;
         }
     
@@ -1155,6 +1159,7 @@ public class ShenyuConfig {
          * @return the value of allowedOrigin
          */
         public AllowedOriginConfig getAllowedOrigin() {
+            LOG.warn("[CTEST][GET-PARAM] getAllowedOrigin" + getStackTrace());
             return allowedOrigin;
         }
     
@@ -1164,6 +1169,7 @@ public class ShenyuConfig {
          * @param allowedOrigin allowedOrigin
          */
         public void setAllowedOrigin(final AllowedOriginConfig allowedOrigin) {
+            LOG.warn("[CTEST][SET-PARAM] setAllowedOrigin" + getStackTrace());
             this.allowedOrigin = allowedOrigin;
         }
 
@@ -1173,6 +1179,7 @@ public class ShenyuConfig {
          * @return the value of allowedAnyOrigin
          */
         public boolean isAllowedAnyOrigin() {
+            LOG.warn("[CTEST][GET-PARAM] isAllowedAnyOrigin" + getStackTrace());
             return allowedAnyOrigin;
         }
 
@@ -1182,6 +1189,7 @@ public class ShenyuConfig {
          * @param allowedAnyOrigin allowedExpose
          */
         public void setAllowedAnyOrigin(final boolean allowedAnyOrigin) {
+            LOG.warn("[CTEST][SET-PARAM] setAllowedAnyOrigin" + getStackTrace());
             this.allowedAnyOrigin = allowedAnyOrigin;
         }
 
@@ -1191,6 +1199,7 @@ public class ShenyuConfig {
          * @return the value of allowedExpose
          */
         public String getAllowedExpose() {
+            LOG.warn("[CTEST][GET-PARAM] getAllowedExpose" + getStackTrace());
             return allowedExpose;
         }
     
@@ -1200,6 +1209,7 @@ public class ShenyuConfig {
          * @param allowedExpose allowedExpose
          */
         public void setAllowedExpose(final String allowedExpose) {
+            LOG.warn("[CTEST][SET-PARAM] setAllowedExpose" + getStackTrace());
             this.allowedExpose = allowedExpose;
         }
     
@@ -1209,6 +1219,7 @@ public class ShenyuConfig {
          * @return the value of maxAge
          */
         public String getMaxAge() {
+            LOG.warn("[CTEST][GET-PARAM] getMaxAge" + getStackTrace());
             return maxAge;
         }
     
@@ -1218,6 +1229,7 @@ public class ShenyuConfig {
          * @param maxAge maxAge
          */
         public void setMaxAge(final String maxAge) {
+            LOG.warn("[CTEST][SET-PARAM] setMaxAge" + getStackTrace());
             this.maxAge = maxAge;
         }
     
@@ -1227,6 +1239,7 @@ public class ShenyuConfig {
          * @return the value of allowCredentials
          */
         public boolean isAllowCredentials() {
+            LOG.warn("[CTEST][GET-PARAM] isAllowCredentials" + getStackTrace());
             return allowCredentials;
         }
     
@@ -1236,6 +1249,7 @@ public class ShenyuConfig {
          * @param allowCredentials allowCredentials
          */
         public void setAllowCredentials(final boolean allowCredentials) {
+            LOG.warn("[CTEST][GET-PARAM] isAllowCredentials" + getStackTrace());
             this.allowCredentials = allowCredentials;
         }
 
@@ -1260,6 +1274,7 @@ public class ShenyuConfig {
              * @return the value of spacer
              */
             public String getSpacer() {
+                LOG.warn("[CTEST][GET-PARAM] getSpacer" + getStackTrace());
                 return spacer;
             }
 
@@ -1269,6 +1284,7 @@ public class ShenyuConfig {
              * @param spacer spacer
              */
             public void setSpacer(final String spacer) {
+                LOG.warn("[CTEST][SET-PARAM] setSpacer" + getStackTrace());
                 this.spacer = spacer;
             }
 
@@ -1278,6 +1294,7 @@ public class ShenyuConfig {
              * @return the value of domain
              */
             public String getDomain() {
+                LOG.warn("[CTEST][GET-PARAM] getDomain" + getStackTrace());
                 return domain;
             }
 
@@ -1287,6 +1304,7 @@ public class ShenyuConfig {
              * @param domain domain
              */
             public void setDomain(final String domain) {
+                LOG.warn("[CTEST][SET-PARAM] setDomain" + getStackTrace());
                 this.domain = domain;
             }
 
@@ -1296,6 +1314,7 @@ public class ShenyuConfig {
              * @return the value of prefixes
              */
             public Set<String> getPrefixes() {
+                LOG.warn("[CTEST][GET-PARAM] getPrefixes" + getStackTrace());
                 return prefixes;
             }
 
@@ -1305,6 +1324,7 @@ public class ShenyuConfig {
              * @param prefixes prefixes
              */
             public void setPrefixes(final Set<String> prefixes) {
+                LOG.warn("[CTEST][SET-PARAM] setPrefixes" + getStackTrace());
                 this.prefixes = prefixes;
             }
 
@@ -1314,6 +1334,7 @@ public class ShenyuConfig {
              * @return the value of prefixes
              */
             public Set<String> getOrigins() {
+                LOG.warn("[CTEST][GET-PARAM] getOrigins" + getStackTrace());
                 return origins;
             }
 
@@ -1323,6 +1344,7 @@ public class ShenyuConfig {
              * @param origins origins
              */
             public void setOrigins(final Set<String> origins) {
+                LOG.warn("[CTEST][SET-PARAM] setOrigins" + getStackTrace());
                 this.origins = origins;
             }
 
@@ -1332,6 +1354,7 @@ public class ShenyuConfig {
              * @return the value of originRegex
              */
             public String getOriginRegex() {
+                LOG.warn("[CTEST][GET-PARAM] getOriginRegex" + getStackTrace());
                 return originRegex;
             }
 
@@ -1341,6 +1364,7 @@ public class ShenyuConfig {
              * @param originRegex originRegex
              */
             public void setOriginRegex(final String originRegex) {
+                LOG.warn("[CTEST][SET-PARAM] setOriginRegex" + getStackTrace());
                 this.originRegex = originRegex;
             }
         }
@@ -1385,6 +1409,7 @@ public class ShenyuConfig {
          * @return the enabled
          */
         public boolean getEnabled() {
+            LOG.warn("[CTEST][GET-PARAM] getEnabled" + getStackTrace());
             return enabled;
         }
     
@@ -1394,6 +1419,7 @@ public class ShenyuConfig {
          * @param enabled the enabled
          */
         public void setEnabled(final boolean enabled) {
+            LOG.warn("[CTEST][SET-PARAM] setEnabled" + getStackTrace());
             this.enabled = enabled;
         }
     
@@ -1403,6 +1429,7 @@ public class ShenyuConfig {
          * @return String register type
          */
         public String getRegisterType() {
+            LOG.warn("[CTEST][GET-PARAM] getRegisterType" + getStackTrace());
             return registerType;
         }
     
@@ -1412,6 +1439,7 @@ public class ShenyuConfig {
          * @param registerType registerType
          */
         public void setRegisterType(final String registerType) {
+            LOG.warn("[CTEST][SET-PARAM] setRegisterType" + getStackTrace());
             this.registerType = registerType;
         }
     
@@ -1421,6 +1449,7 @@ public class ShenyuConfig {
          * @return String server lists
          */
         public String getServerLists() {
+            LOG.warn("[CTEST][GET-PARAM] getRegisterType" + getStackTrace());
             return serverLists;
         }
     
@@ -1430,6 +1459,7 @@ public class ShenyuConfig {
          * @param serverLists serverLists
          */
         public void setServerLists(final String serverLists) {
+            LOG.warn("[CTEST][SET-PARAM] setServerLists" + getStackTrace());
             this.serverLists = serverLists;
         }
     
@@ -1439,6 +1469,7 @@ public class ShenyuConfig {
          * @return String props
          */
         public Properties getProps() {
+            LOG.warn("[CTEST][GET-PARAM] getProps" + getStackTrace());
             return props;
         }
     
@@ -1448,6 +1479,7 @@ public class ShenyuConfig {
          * @param props props
          */
         public void setProps(final Properties props) {
+            LOG.warn("[CTEST][SET-PARAM] setProps" + getStackTrace());
             this.props = props;
         }
     }
@@ -1483,6 +1515,7 @@ public class ShenyuConfig {
          * @return the serverListRefreshInterval
          */
         public Integer getServerListRefreshInterval() {
+            LOG.warn("[CTEST][GET-PARAM] getServerListRefreshInterval" + getStackTrace());
             return serverListRefreshInterval;
         }
     
@@ -1492,6 +1525,7 @@ public class ShenyuConfig {
          * @param serverListRefreshInterval serverListRefreshInterval
          */
         public void setServerListRefreshInterval(final Integer serverListRefreshInterval) {
+            LOG.warn("[CTEST][SET-PARAM] setServerListRefreshInterval" + getStackTrace());
             this.serverListRefreshInterval = serverListRefreshInterval;
         }
     }
@@ -1526,6 +1560,7 @@ public class ShenyuConfig {
          * @return the enabled
          */
         public boolean getEnabled() {
+            LOG.warn("[CTEST][GET-PARAM] getEnabled" + getStackTrace());
             return enabled;
         }
     
@@ -1535,6 +1570,7 @@ public class ShenyuConfig {
          * @param enabled the enabled
          */
         public void setEnabled(final boolean enabled) {
+            LOG.warn("[CTEST][SET-PARAM] setEnabled" + getStackTrace());
             this.enabled = enabled;
         }
     
@@ -1544,6 +1580,7 @@ public class ShenyuConfig {
          * @return the key
          */
         public String getSha512Key() {
+            LOG.warn("[CTEST][GET-PARAM] getSha512Key" + getStackTrace());
             return sha512Key;
         }
     
@@ -1553,6 +1590,7 @@ public class ShenyuConfig {
          * @param sha512Key sha512Key
          */
         public void setSha512Key(final String sha512Key) {
+            LOG.warn("[CTEST][SET-PARAM] setSha512Key" + getStackTrace());
             this.sha512Key = sha512Key;
         }
     }
@@ -1573,6 +1611,7 @@ public class ShenyuConfig {
          * @return the max frame payload szie
          */
         public Integer getMaxFramePayloadSize() {
+            LOG.warn("[CTEST][GET-PARAM] getMaxFramePayloadSize" + getStackTrace());
             return maxFramePayloadSize;
         }
     
@@ -1582,6 +1621,7 @@ public class ShenyuConfig {
          * @param maxFramePayloadSize the max frame paylod size
          */
         public void setMaxFramePayloadSize(final Integer maxFramePayloadSize) {
+            LOG.warn("[CTEST][SET-PARAM] setMaxFramePayloadSize" + getStackTrace());
             this.maxFramePayloadSize = maxFramePayloadSize;
         }
     }
@@ -1644,6 +1684,7 @@ public class ShenyuConfig {
          * @return whether to enable
          */
         public Boolean getEnable() {
+            LOG.warn("[CTEST][GET-PARAM] getEnable" + getStackTrace());
             return enable;
         }
     
@@ -1653,6 +1694,7 @@ public class ShenyuConfig {
          * @param enable the enable
          */
         public void setEnable(final Boolean enable) {
+            LOG.warn("[CTEST][SET-PARAM] setEnable" + getStackTrace());
             this.enable = enable;
         }
     
@@ -1662,6 +1704,7 @@ public class ShenyuConfig {
          * @return the shared thread pool name prefix
          */
         public String getPrefix() {
+            LOG.warn("[CTEST][GET-PARAM] getPrefix" + getStackTrace());
             return prefix;
         }
     
@@ -1671,6 +1714,7 @@ public class ShenyuConfig {
          * @param prefix the prefix
          */
         public void setPrefix(final String prefix) {
+            LOG.warn("[CTEST][SET-PARAM] setPrefix" + getStackTrace());
             this.prefix = prefix;
         }
     
@@ -1680,6 +1724,7 @@ public class ShenyuConfig {
          * @return the shared thread pool core size
          */
         public Integer getCorePoolSize() {
+            LOG.warn("[CTEST][GET-PARAM] getCorePoolSize" + getStackTrace());
             return corePoolSize;
         }
     
@@ -1689,6 +1734,7 @@ public class ShenyuConfig {
          * @param corePoolSize the core pool size
          */
         public void setCorePoolSize(final Integer corePoolSize) {
+            LOG.warn("[CTEST][SET-PARAM] setCorePoolSize" + getStackTrace());
             this.corePoolSize = corePoolSize;
         }
     
@@ -1698,6 +1744,7 @@ public class ShenyuConfig {
          * @return the shared thread pool name prefix
          */
         public Integer getMaximumPoolSize() {
+            LOG.warn("[CTEST][GET-PARAM] getMaximumPoolSize" + getStackTrace());
             return maximumPoolSize;
         }
     
@@ -1707,6 +1754,7 @@ public class ShenyuConfig {
          * @param maximumPoolSize the max pool size
          */
         public void setMaximumPoolSize(final Integer maximumPoolSize) {
+            LOG.warn("[CTEST][GET-PARAM] getMaximumPoolSize" + getStackTrace());
             this.maximumPoolSize = maximumPoolSize;
         }
     
@@ -1716,6 +1764,7 @@ public class ShenyuConfig {
          * @return the shared thread pool keep alive time
          */
         public Long getKeepAliveTime() {
+            LOG.warn("[CTEST][GET-PARAM] getKeepAliveTime" + getStackTrace());
             return keepAliveTime;
         }
     
@@ -1725,6 +1774,7 @@ public class ShenyuConfig {
          * @param keepAliveTime the keep alive time
          */
         public void setKeepAliveTime(final Long keepAliveTime) {
+            LOG.warn("[CTEST][SET-PARAM] setKeepAliveTime" + getStackTrace());
             this.keepAliveTime = keepAliveTime;
         }
     
@@ -1734,6 +1784,7 @@ public class ShenyuConfig {
          * @return the shared thread pool max work queue memory
          */
         public Long getMaxWorkQueueMemory() {
+            LOG.warn("[CTEST][GET-PARAM] getMaxWorkQueueMemory" + getStackTrace());
             return maxWorkQueueMemory;
         }
     
@@ -1743,6 +1794,7 @@ public class ShenyuConfig {
          * @param maxWorkQueueMemory the max work queue memory
          */
         public void setMaxWorkQueueMemory(final Long maxWorkQueueMemory) {
+            LOG.warn("[CTEST][SET-PARAM] setMaxWorkQueueMemory" + getStackTrace());
             this.maxWorkQueueMemory = maxWorkQueueMemory;
         }
 
@@ -1752,6 +1804,7 @@ public class ShenyuConfig {
          * @return the shared thread pool max work queue free memory
          */
         public Integer getMaxFreeMemory() {
+            LOG.warn("[CTEST][GET-PARAM] getMaxFreeMemory" + getStackTrace());
             return maxFreeMemory;
         }
 
@@ -1761,6 +1814,7 @@ public class ShenyuConfig {
          * @param maxFreeMemory the max work queue free memory
          */
         public void setMaxFreeMemory(final Integer maxFreeMemory) {
+            LOG.warn("[CTEST][SET-PARAM] setMaxFreeMemory" + getStackTrace());
             this.maxFreeMemory = maxFreeMemory;
         }
     }
@@ -1794,6 +1848,7 @@ public class ShenyuConfig {
          * @return the enabled
          */
         public boolean getEnabled() {
+            LOG.warn("[CTEST][GET-PARAM] getEnabled" + getStackTrace());
             return enabled;
         }
     
@@ -1803,6 +1858,7 @@ public class ShenyuConfig {
          * @param enabled the enabled
          */
         public void setEnabled(final boolean enabled) {
+            LOG.warn("[CTEST][SET-PARAM] setEnabled" + getStackTrace());
             this.enabled = enabled;
         }
     
@@ -1821,6 +1877,7 @@ public class ShenyuConfig {
          * @param name the metrics name
          */
         public void setName(final String name) {
+            LOG.warn("[CTEST][SET-PARAM] setName" + getStackTrace());
             this.name = name;
         }
     
@@ -1830,6 +1887,7 @@ public class ShenyuConfig {
          * @return the host
          */
         public String getHost() {
+            LOG.warn("[CTEST][GET-PARAM] getHost" + getStackTrace());
             return host;
         }
     
@@ -1839,6 +1897,7 @@ public class ShenyuConfig {
          * @param host the host
          */
         public void setHost(final String host) {
+            LOG.warn("[CTEST][SET-PARAM] setHost" + getStackTrace());
             this.host = host;
         }
     
@@ -1848,6 +1907,7 @@ public class ShenyuConfig {
          * @return the port
          */
         public Integer getPort() {
+            LOG.warn("[CTEST][GET-PARAM] getPort" + getStackTrace());
             return port;
         }
     
@@ -1857,6 +1917,7 @@ public class ShenyuConfig {
          * @param port the port
          */
         public void setPort(final Integer port) {
+            LOG.warn("[CTEST][SET-PARAM] setPort" + getStackTrace());
             this.port = port;
         }
     
@@ -1866,6 +1927,7 @@ public class ShenyuConfig {
          * @return the jmx config
          */
         public String getJmxConfig() {
+            LOG.warn("[CTEST][GET-PARAM] getJmxConfig" + getStackTrace());
             return jmxConfig;
         }
     
@@ -1875,6 +1937,7 @@ public class ShenyuConfig {
          * @param jmxConfig the jmx config
          */
         public void setJmxConfig(final String jmxConfig) {
+            LOG.warn("[CTEST][SET-PARAM] setJmxConfig" + getStackTrace());
             this.jmxConfig = jmxConfig;
         }
     
@@ -1884,6 +1947,7 @@ public class ShenyuConfig {
          * @return the props
          */
         public Properties getProps() {
+            LOG.warn("[CTEST][GET-PARAM] getProps" + getStackTrace());
             return props;
         }
     
@@ -1893,6 +1957,7 @@ public class ShenyuConfig {
          * @param props the props
          */
         public void setProps(final Properties props) {
+            LOG.warn("[CTEST][SET-PARAM] setProps" + getStackTrace());
             this.props = props;
         }
     }
