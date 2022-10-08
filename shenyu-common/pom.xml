@@ -72,27 +72,13 @@
 
     </dependencies>
 
-    <!-- <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                <reportFormat>plain</reportFormat>
-                <includes>
-                    <include>**/*Test.java</include>
-                </includes>
-                <forkCount>${surefire-forkcount}</forkCount>
-                <reuseForks>false</reuseForks>
-                <argLine>-Xmx512m -Dtest.junit.threads=${surefire-forkcount} -Dzookeeper.junit.threadid=${surefire.forkNumber}</argLine>
-                <basedir>${project.basedir}</basedir>
-                <redirectTestOutputToFile>true</redirectTestOutputToFile>
-                <systemPropertyVariables>
-                    <build.test.dir>${project.build.directory}/surefire</build.test.dir>
-                    <zookeeper.DigestAuthenticationProvider.superDigest>super:D/InIHSb7yEEbrWz8b9l71RjZJU=</zookeeper.DigestAuthenticationProvider.superDigest>
-                </systemPropertyVariables>
-                </configuration>
+                <version>3.0.0-M4</version>
             </plugin>
         </plugins>
-    </build> -->
+    </build>
 </project>
