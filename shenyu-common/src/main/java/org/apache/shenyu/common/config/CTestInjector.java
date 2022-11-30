@@ -52,11 +52,12 @@ public class CTestInjector {
             while (fileReader.hasNextLine()) {
                 line = fileReader.nextLine();
                 paramPath = line.split("=");
-                if(paramPath.length() < 2)
+                if (paramPath.length < 2) {
                     paramValue = "null";
-                else
+                } else {
                     paramValue = paramPath[1];
-                paramPath = paramPath.split(".");
+                }
+                paramPath = paramPath[0].split(".");
                 pathIdx = 0;
                 updateShenyuConfig(shenyuConfig);
             }
@@ -73,8 +74,7 @@ public class CTestInjector {
      * @param shenyuConfig The obejct waiting for update
      */
     public static void updateShenyuConfig(final ShenyuConfig shenyuConfig) {
-        switch (paramPath[pathIdx]) {
-            pathIdx++;
+        switch (paramPath[pathIdx++]) {
             case "switchconfig":
                 break;
             case "file":
@@ -119,22 +119,21 @@ public class CTestInjector {
      * @param shenyuConfig The obejct waiting for update
      */
     public static void updateExtPluginConfig(final ShenyuConfig shenyuConfig) {
-        switch (paramPath[pathIdx]) {
-            pathIdx++;
+        switch (paramPath[pathIdx++]) {
             case "path":
-                shenyuConfig.getExtPlugin().setPath(paramValue == null ? null : paramValue);
+                shenyuConfig.getExtPlugin().setPath("null".equals(paramValue) ? null : paramValue);
                 break;
-            case "":
-                shenyuConfig.getExtPlugin().setEnable(Boolean.valueOf(paramValue));
+            case "enabled":
+                shenyuConfig.getExtPlugin().setEnabled(Boolean.valueOf(paramValue));
                 break;
-            case "":
-                shenyuConfig.getExtPlugin().setThreads(paramValue == null ? null : paramValue);
+            case "threads":
+                shenyuConfig.getExtPlugin().setThreads("null".equals(paramValue) ? null : Integer.valueOf(paramValue));
                 break;
-            case "":
-                shenyuConfig.getExtPlugin().setScheduleTime(paramValue == null ? null : Integer.valueOf(paramValue));
+            case "scheduletime":
+                shenyuConfig.getExtPlugin().setScheduleTime("null".equals(paramValue) ? null : Integer.valueOf(paramValue));
                 break;
-            case "":
-                shenyuConfig.getExtPlugin().setScheduledelay(paramValue == null ? null : Integer.valueOf(paramValue));
+            case "scheduledelay":
+                shenyuConfig.getExtPlugin().setScheduleDelay("null".equals(paramValue) ? null : Integer.valueOf(paramValue));
                 break;
             default:
         }
@@ -146,8 +145,7 @@ public class CTestInjector {
     //  * @param shenyuConfig The obejct waiting for update
     //  */
     // public static void updateSchedulerConfig(final ShenyuConfig shenyuConfig) {
-    //     switch (paramPath[pathIdx]) {
-    //         pathIdx++;
+    //     switch (paramPath[pathIdx++]) {
     //         case "":
     //             break;
     //         case "":
@@ -165,8 +163,7 @@ public class CTestInjector {
      * @param shenyuConfig The obejct waiting for update
      */
     public static void updateSchedulerConfig(final ShenyuConfig shenyuConfig) {
-        switch (paramPath[pathIdx]) {
-            pathIdx++;
+        switch (paramPath[pathIdx++]) {
             case "enabled":
                 shenyuConfig.getScheduler().setEnabled(Boolean.valueOf(paramValue));
                 break;
