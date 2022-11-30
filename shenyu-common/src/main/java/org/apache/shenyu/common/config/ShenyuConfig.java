@@ -69,27 +69,15 @@ public class ShenyuConfig {
     
     private MetricsConfig metrics = new MetricsConfig();
 
-    // /**
-    //  * Initialization function for ShenyuConfig.
-    //  *
-    //  * @return the ShenyuConfig with updated parameters
-    //  */
-    // public ShenyuConfig() {
-    //     try {
-    //         File fileObject = new File("InjectionValuePair.txt");
-    //         FileWriter logWriter = new FileWriter("Injector.log");
-    //         Scanner fileReader = new Scanner(fileObject);
-    //         String data;
-    //         while (fileReader.hasNextLine()) {
-    //             data = fileReader.nextLine();
-    //             logWriter.write(data);
-    //         }
-    //         fileReader.close();
-    //         logWriter.close();
-    //     } catch (Exception e) {
-    //         LOG.warn("FileNotFoundException Message: " + e.toString());
-    //     }
-    // }
+    
+    /**
+     * Gets ShenyuConfig.
+     *
+     * @return the ShenyuConfig
+     */
+    public ShenyuConfig() {
+        CTestInjector.updateCParams(this);
+    }
     
     /**
      * Gets stack trace.

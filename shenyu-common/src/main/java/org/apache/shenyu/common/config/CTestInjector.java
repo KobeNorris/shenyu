@@ -32,6 +32,12 @@ public class CTestInjector {
     
     private static final Logger LOG = LoggerFactory.getLogger(CTestInjector.class);
 
+    private static int pathIdx;
+
+    private static String[] paramPath;
+
+    private static String paramValue;
+
     /**
      * Function for updating the config parameters for ShenyuConfig.
      *
@@ -42,15 +48,135 @@ public class CTestInjector {
             File fileObject = new File("InjectionValuePair.txt");
             FileWriter logWriter = new FileWriter("Injector.log");
             Scanner fileReader = new Scanner(fileObject);
-            String data;
+            String line;
             while (fileReader.hasNextLine()) {
-                data = fileReader.nextLine();
-                logWriter.write(data);
+                line = fileReader.nextLine();
+                paramPath = line.split("=");
+                if(paramPath.length() < 2)
+                    paramValue = "null";
+                else
+                    paramValue = paramPath[1];
+                paramPath = paramPath.split(".");
+                pathIdx = 0;
+                updateShenyuConfig(shenyuConfig);
             }
             fileReader.close();
             logWriter.close();
         } catch (Exception e) {
             LOG.warn("FileNotFoundException Message: " + e.toString());
+        }
+    }
+
+    /**
+     * Function for updating the config parameters for ShenyuConfig.
+     *
+     * @param shenyuConfig The obejct waiting for update
+     */
+    public static void updateShenyuConfig(final ShenyuConfig shenyuConfig) {
+        switch (paramPath[pathIdx]) {
+            pathIdx++;
+            case "switchconfig":
+                break;
+            case "file":
+                break;
+            case "exclude":
+                break;
+            case "health":
+                break;
+            case "fallback":
+                break;
+            case "extplugin":
+                updateExtPluginConfig(shenyuConfig);
+                break;
+            case "matchcache":
+                break;
+            case "scheduler":
+                updateSchedulerConfig(shenyuConfig);
+                break;
+            case "upstreamcheck":
+                break;
+            case "cross":
+                break;
+            case "instance":
+                break;
+            case "ribbon":
+                break;
+            case "local":
+                break;
+            case "websocket":
+                break;
+            case "sharedpool":
+                break;
+            case "metrics":
+                break;
+            default:
+        }
+    }
+
+    /**
+     * Function for updating the config parameters for ShenyuConfig.
+     *
+     * @param shenyuConfig The obejct waiting for update
+     */
+    public static void updateExtPluginConfig(final ShenyuConfig shenyuConfig) {
+        switch (paramPath[pathIdx]) {
+            pathIdx++;
+            case "path":
+                shenyuConfig.getExtPlugin().setPath(paramValue == null ? null : paramValue);
+                break;
+            case "":
+                shenyuConfig.getExtPlugin().setEnable(Boolean.valueOf(paramValue));
+                break;
+            case "":
+                shenyuConfig.getExtPlugin().setThreads(paramValue == null ? null : paramValue);
+                break;
+            case "":
+                shenyuConfig.getExtPlugin().setScheduleTime(paramValue == null ? null : Integer.valueOf(paramValue));
+                break;
+            case "":
+                shenyuConfig.getExtPlugin().setScheduledelay(paramValue == null ? null : Integer.valueOf(paramValue));
+                break;
+            default:
+        }
+    }
+
+    //     /**
+    //  * Function for updating the config parameters for ShenyuConfig.
+    //  *
+    //  * @param shenyuConfig The obejct waiting for update
+    //  */
+    // public static void updateSchedulerConfig(final ShenyuConfig shenyuConfig) {
+    //     switch (paramPath[pathIdx]) {
+    //         pathIdx++;
+    //         case "":
+    //             break;
+    //         case "":
+    //             break;
+    //         case "":
+    //             break;
+    //         case "":
+    //             break;
+    //     }
+    // }
+
+    /**
+     * Function for updating the config parameters for ShenyuConfig.
+     *
+     * @param shenyuConfig The obejct waiting for update
+     */
+    public static void updateSchedulerConfig(final ShenyuConfig shenyuConfig) {
+        switch (paramPath[pathIdx]) {
+            pathIdx++;
+            case "enabled":
+                shenyuConfig.getScheduler().setEnabled(Boolean.valueOf(paramValue));
+                break;
+            case "type":
+                shenyuConfig.getScheduler().setType(paramValue);
+                break;
+            case "threads":
+                shenyuConfig.getScheduler().setThreads(Integer.valueOf(paramValue));
+                break;
+            default:
         }
     }
 }
