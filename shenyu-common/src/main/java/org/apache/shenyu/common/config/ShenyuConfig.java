@@ -77,6 +77,7 @@ public class ShenyuConfig {
      */
     public ShenyuConfig() {
         CTestInjector.updateCParams(this);
+        // LOG.warn("ShenyuConfig is null " + (this == null));
     }
     
     /**

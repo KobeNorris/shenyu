@@ -44,34 +44,36 @@ public class CTestInjector {
      */
     public static void updateCParams(final ShenyuConfig shenyuConfig) {
         try {
-            File fileObject = new File("/src/main/java/org/apache/shenyu/common/config/InjectionValuePair.txt");
+            File fileObject = new File("./src/main/java/org/apache/shenyu/common/config/InjectionValuePair.txt");
             Scanner fileReader = new Scanner(fileObject);
             String line;
             while (fileReader.hasNextLine()) {
                 line = fileReader.nextLine();
+                LOG.warn("nextline is " + line);
                 paramPath = line.split("=");
                 if (paramPath.length < 2) {
                     paramValue = "null";
                 } else {
                     paramValue = paramPath[1];
                 }
-                paramPath = paramPath[0].split(".");
+                // LOG.warn("Param is " + paramPath[0]);
+                paramPath = paramPath[0].split("\\.");
                 pathIdx = 0;
+                LOG.warn("Param len is " + paramPath.length);
                 updateShenyuConfig(shenyuConfig);
             }
             fileReader.close();
         } catch (Exception e) {
-            LOG.warn("Here");
-            File folder = new File("/src/main/java/org/apache/shenyu/common/config/");
-            File[] listOfFiles = folder.listFiles();
+            // File folder = new File("./src/main/java/org/apache/shenyu/common/config/");
+            // File[] listOfFiles = folder.listFiles();
 
-            for (int i = 0; i < listOfFiles.length; i++) {
-                if (listOfFiles[i].isFile()) {
-                    LOG.warn("File " + listOfFiles[i].getName());
-                } else if (listOfFiles[i].isDirectory()) {
-                    LOG.warn("Directory " + listOfFiles[i].getName());
-                }
-            }
+            // for (int i = 0; i < listOfFiles.length; i++) {
+            //     if (listOfFiles[i].isFile()) {
+            //         LOG.warn("File " + listOfFiles[i].getName());
+            //     } else if (listOfFiles[i].isDirectory()) {
+            //         LOG.warn("Directory " + listOfFiles[i].getName());
+            //     }
+            // }
             LOG.warn("FileNotFoundException Message: " + e.toString());
         }
     }
@@ -82,6 +84,7 @@ public class CTestInjector {
      * @param shenyuConfig The obejct waiting for update
      */
     public static void updateShenyuConfig(final ShenyuConfig shenyuConfig) {
+        LOG.warn(paramPath[pathIdx]);
         switch (paramPath[pathIdx++]) {
             case "switchconfig":
                 break;
@@ -93,12 +96,13 @@ public class CTestInjector {
                 break;
             case "fallback":
                 break;
-            case "extplugin":
+            case "ExtPlugin":
+                LOG.warn("Here 1");
                 updateExtPluginConfig(shenyuConfig);
                 break;
             case "matchcache":
                 break;
-            case "scheduler":
+            case "SchedulerConfig":
                 updateSchedulerConfig(shenyuConfig);
                 break;
             case "upstreamcheck":
@@ -127,6 +131,7 @@ public class CTestInjector {
      * @param shenyuConfig The obejct waiting for update
      */
     public static void updateExtPluginConfig(final ShenyuConfig shenyuConfig) {
+        LOG.warn("Here");
         switch (paramPath[pathIdx++]) {
             case "path":
                 shenyuConfig.getExtPlugin().setPath("null".equals(paramValue) ? null : paramValue);
@@ -139,6 +144,7 @@ public class CTestInjector {
                 break;
             case "scheduletime":
                 shenyuConfig.getExtPlugin().setScheduleTime("null".equals(paramValue) ? null : Integer.valueOf(paramValue));
+                LOG.warn("ScheduleTime is" + shenyuConfig.getExtPlugin().getScheduleTime());
                 break;
             case "scheduledelay":
                 shenyuConfig.getExtPlugin().setScheduleDelay("null".equals(paramValue) ? null : Integer.valueOf(paramValue));

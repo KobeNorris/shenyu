@@ -188,8 +188,6 @@ public class ShenyuConfigTest {
         Integer scheduleDelay = extPlugin.getScheduleDelay();
         Integer scheduleTime = extPlugin.getScheduleTime();
 
-        // LOG.warn("scheduleTime is " + scheduleTime == null ? "null" : scheduleTime);
-
         notEmptyElements(enabled, path, scheduleTime, scheduleDelay, threads);
     }
 
