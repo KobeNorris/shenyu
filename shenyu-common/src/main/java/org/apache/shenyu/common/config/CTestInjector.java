@@ -21,7 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileWriter;
 
 import java.util.Scanner;
 
@@ -45,8 +44,7 @@ public class CTestInjector {
      */
     public static void updateCParams(final ShenyuConfig shenyuConfig) {
         try {
-            File fileObject = new File("InjectionValuePair.txt");
-            FileWriter logWriter = new FileWriter("Injector.log");
+            File fileObject = new File("/src/main/java/org/apache/shenyu/common/config/InjectionValuePair.txt");
             Scanner fileReader = new Scanner(fileObject);
             String line;
             while (fileReader.hasNextLine()) {
@@ -62,8 +60,18 @@ public class CTestInjector {
                 updateShenyuConfig(shenyuConfig);
             }
             fileReader.close();
-            logWriter.close();
         } catch (Exception e) {
+            LOG.warn("Here");
+            File folder = new File("/src/main/java/org/apache/shenyu/common/config/");
+            File[] listOfFiles = folder.listFiles();
+
+            for (int i = 0; i < listOfFiles.length; i++) {
+                if (listOfFiles[i].isFile()) {
+                    LOG.warn("File " + listOfFiles[i].getName());
+                } else if (listOfFiles[i].isDirectory()) {
+                    LOG.warn("Directory " + listOfFiles[i].getName());
+                }
+            }
             LOG.warn("FileNotFoundException Message: " + e.toString());
         }
     }

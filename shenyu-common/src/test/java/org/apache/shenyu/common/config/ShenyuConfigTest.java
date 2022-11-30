@@ -27,10 +27,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Test cases for ShenyuConfig.
  */
 public class ShenyuConfigTest {
+    
+    private static final Logger LOG = LoggerFactory.getLogger(ShenyuConfigTest.class);
+
     private final ShenyuConfig config = new ShenyuConfig();
 
     /**
@@ -181,6 +187,8 @@ public class ShenyuConfigTest {
         Boolean enabled = extPlugin.getEnabled();
         Integer scheduleDelay = extPlugin.getScheduleDelay();
         Integer scheduleTime = extPlugin.getScheduleTime();
+
+        // LOG.warn("scheduleTime is " + scheduleTime == null ? "null" : scheduleTime);
 
         notEmptyElements(enabled, path, scheduleTime, scheduleDelay, threads);
     }
