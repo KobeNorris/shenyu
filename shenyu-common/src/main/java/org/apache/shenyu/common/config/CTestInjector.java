@@ -48,7 +48,7 @@ public class CTestInjector {
      */
     public static void updateCParams(final ShenyuConfig shenyuConfig) {
         try {
-            File fileObject = new File("InjectionValuePair.txt");
+            File fileObject = new File("./src/main/java/org/apache/shenyu/common/config/InjectionValuePair.txt");
             FileWriter logWriter = new FileWriter("Injector.log");
             Scanner fileReader = new Scanner(fileObject);
             String line;
@@ -60,7 +60,7 @@ public class CTestInjector {
                 } else {
                     paramValue = paramPath[1];
                 }
-                paramPath = paramPath[0].split(".");
+                paramPath = paramPath[0].split("\\.");
                 pathIdx = 0;
                 updateShenyuConfig(shenyuConfig);
             }
