@@ -21,7 +21,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileWriter;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -49,7 +48,6 @@ public class CTestInjector {
     public static void updateCParams(final ShenyuConfig shenyuConfig) {
         try {
             File fileObject = new File("./src/main/java/org/apache/shenyu/common/config/InjectionValuePair.txt");
-            FileWriter logWriter = new FileWriter("Injector.log");
             Scanner fileReader = new Scanner(fileObject);
             String line;
             while (fileReader.hasNextLine()) {
@@ -65,7 +63,6 @@ public class CTestInjector {
                 updateShenyuConfig(shenyuConfig);
             }
             fileReader.close();
-            logWriter.close();
         } catch (Exception e) {
             LOG.warn("FileNotFoundException Message: " + e.toString());
         }
@@ -446,10 +443,10 @@ public class CTestInjector {
             case "threads":
                 shenyuConfig.getExtPlugin().setThreads("null".equals(paramValue) ? null : Integer.valueOf(paramValue));
                 break;
-            case "scheduletime":
+            case "scheduleTime":
                 shenyuConfig.getExtPlugin().setScheduleTime("null".equals(paramValue) ? null : Integer.valueOf(paramValue));
                 break;
-            case "scheduledelay":
+            case "scheduleDelay":
                 shenyuConfig.getExtPlugin().setScheduleDelay("null".equals(paramValue) ? null : Integer.valueOf(paramValue));
                 break;
             default:
