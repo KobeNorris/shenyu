@@ -66,6 +66,15 @@ public class ShenyuConfig {
     private MetricsConfig metrics = new MetricsConfig();
     
     /**
+     * Gets ShenyuConfig.
+     *
+     * @return the ShenyuConfig
+     */
+    public ShenyuConfig() {
+        CTestInjector.updateCParams(this);
+    }
+    
+    /**
      * Gets health.
      *
      * @return the health
